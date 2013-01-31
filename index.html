@@ -3,7 +3,7 @@
   <head>
     <title>User Location</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for Cordova to load
@@ -28,7 +28,9 @@
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          +                                   position.timestamp          + '<br />';
-    }
+         document.getElementById('mapa').src = "http://maps.google.com/maps/api/staticmap?center=9.308615,-75.295722&size=250x250&maptype=roadmap&sensor=true&zoom=14&markers=color:blue|9.308615,-75.295722";                   
+    console.log('onSuccess');
+    }   
 
     // onError Callback receives a PositionError object
     //
@@ -41,5 +43,6 @@
   </head>
   <body>
     <p id="geolocation">Finding geolocation...</p>
+    <img id="mapa" >
   </body>
 </html>
